@@ -39,7 +39,7 @@ data "aws_iam_policy_document" "this" {
     ]
 
     resources = [
-      "arn:aws:dynamodb:::*",
+      "*",
     ]
   }
 
