@@ -39,7 +39,7 @@ data "aws_iam_policy_document" "this" {
     ]
 
     resources = [
-      "*",
+      "arn:aws:dynamodb:::*",
     ]
   }
 
@@ -59,8 +59,8 @@ data "aws_iam_policy_document" "this" {
     ]
 
     resources = [
-      "arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.this.id}}",
-      "arn:aws:dynamodb:*:*:table/${aws_dynamodb_table.this.id}}/*",
+      aws_dynamodb_table.this.arn,
+      "${aws_dynamodb_table.this.arn}/*",
     ]
   }
 }
